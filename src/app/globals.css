@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Theme Colors */
+:root {
+    --primary-color: #044E83;
+    --secondary-color: #B9D8F3;
+    --highlight-color: #2EB6E8;
+    --text-color-dark: #27272A;
+}
+
+/* Navbar Styles */
+nav {
+    @apply bg-[var(--primary-color)] text-[var(--secondary-color)] flex justify-between items-center relative;
+ 
+}
+
+/* Logo */
+.logo {
+    width: 70px; /* Adjust as needed */
+}
+
+/* Header Text */
+#nav-h {
+    @apply text-[1.3125rem] text-[var(--secondary-color)];
+}
+
+/* Shared Heading & Paragraph Styles */
+h1, p {
+    @apply font-extrabold text-[var(--primary-color)];
+}
+
+/* Certified Heading */
+#certified {
+    color: var(--highlight-color);
+    font-weight: 900;
+}
+
+/* Button Styling */
+button {
+    @apply bg-[var(--primary-color)] text-white;
+}
+
+/* Number Styling */
+#number {
+    color: var(--primary-color);
+}
+
+/* Card Section */
+#cardh {
+    @apply text-2xl text-[var(--primary-color)];
+}
+
+#cardp {
+    @apply text-[var(--text-color-dark)] font-medium;
+    word-spacing: 0.5rem; /* 8px */
+    font-size: large; /* You may want to use Tailwind's text utilities */
+}
+
+/* Responsive Hero Section */
+#hero {
+    margin-top: 80px; /* To avoid overlap with fixed navbar */
+    padding: 1rem;
+}
+
+h1 {
+    @apply text-[1.5rem] font-bold text-[#044E83];
+}
+
+/* Responsive Cards */
+#card-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    #card-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    #card-section {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Nav Links */
+.nav-links {
+    display:none; /* Hide by default */
+}
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+    .nav-links {
+        flex-direction: column; /* Stack links vertically */
+        display: flex; /* Show links in mobile */
+        position: absolute; /* Position absolute for dropdown */
+        background-color: var(--primary-color); /* Background color */
+        width: 100%; /* Full width */
+        top: 100%; /* Position below the navbar */
+        left: 0;
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) and (max-width: 979px) {
+    nav {
+        height: 100px; /* Adjust height for tablet */
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 980px) {
+    nav {
+        height: 120px; /* Adjust height for desktop */
+    }
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none; /* Hide by default */
+    position: absolute; /* Position absolute for dropdown */
+    background-color: var(--primary-color); /* Background color */
+    width: 150px; /* Width of dropdown menu */
+    left: 100%; /* Position to the right of the nav link */
+    top: 0; /* Position above the nav link */
+}
